@@ -1,3 +1,4 @@
+#Creating VPC subnet and security gruops
 import boto3
 from botocore.exceptions import ClientError
 
@@ -13,7 +14,7 @@ class CreateEc2Instance(object):
                 vpc_id=vpc['VpcId']
                 break
         print("The Default VpC:",vpc_id)   
-        response=self.ec2_client.describe_subnets(Filters=[{"Name":"vpc_id","Values": [vpc_id]}])
+        response=self.ec2_client.describe_subnets(Filters=[{"Name":"vpc_id","Values":[vpc_id]}])
         print(response)      
 # lest start Execution
 try:
